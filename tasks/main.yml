@@ -25,6 +25,12 @@
     state: present
   notify:
     - chronyd started
+  
+- name: verify chronyd service started/enabled
+  service:
+    name: chronyd
+    state: started
+    enabled: yes
 
 - name: installing boilerplate bash profile
   template:
